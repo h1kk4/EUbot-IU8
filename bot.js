@@ -12,7 +12,7 @@ const request = require("request");
 //app.use(parser());
 
 app.use((req, res, next) => {
-    u.log(body);
+    u.log(req.body);
     next();
 })
 
