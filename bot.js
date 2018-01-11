@@ -67,7 +67,7 @@ const u = {
         params.access_token = process.env.TOKEN;
         let result = [];
         for (let i in params) {
-            result.push("" + i + params[i]);
+            result.push("" + i + "=" + params[i]);
         }
         return result.join("&");
     },
