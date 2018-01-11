@@ -57,7 +57,7 @@ const u = {
         return "[ " + date.toUTCString() + " ]";
     },
     log: (...args) => {
-        console.log(date(), ...args);
+        console.log(u.date(), ...args);
     },
     send_ok: (res) => {
         res.status(200).send("ok");
