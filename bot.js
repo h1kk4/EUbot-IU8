@@ -15,8 +15,9 @@ const u = {
     }
 }
 
-bot.on(({message, reply}) => {
-    reply(message);
+bot.on((data) => {
+    u.log(data);
+    data.reply();
 });
 
 bot.listen();
