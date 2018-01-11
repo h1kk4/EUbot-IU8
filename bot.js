@@ -9,7 +9,7 @@ const app = require("express")();
 //const parser = require("body-parser");
 const request = require("request");
 
-app.use(parser());
+//app.use(parser());
 
 app.use((req, res, next) => {
     u.log(body);
