@@ -48,7 +48,7 @@ const u = {
 
             u.use_method("message.send", {
                 user_id: user_id,
-                message: "HELLO EPTA"
+                message: "HELLO_EPTA"
             });
         }
     },
