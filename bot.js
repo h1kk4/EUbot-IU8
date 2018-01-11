@@ -6,10 +6,10 @@
 const api_host = "https://api.vk.com/method/";
 
 const app = require("express")();
-//const parser = require("body-parser");
+const parser = require("body-parser");
 const request = require("request");
 
-//app.use(parser());
+app.use(parser.json());
 
 app.use((req, res, next) => {
     u.log(req.body);
