@@ -1,0 +1,20 @@
+{
+  "name": "eubot",
+  "version": "0.1.0",
+  "description": "Bot for VK that can take screenshot of table with marks from BMSTU Electronic University and send it with a reply message (group name must be specified in message)",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dom": "0.0.3",
+    "es2016": "0.0.0",
+    "express": "^4.16.2",
+    "html2canvas": "^1.0.0-alpha.9",
+    "jsdom": "^11.5.1",
+    "phantomjs": "^2.1.7",
+    "webpage": "^0.3.0"
+  }
+}
