@@ -15,7 +15,7 @@ app.get("/", (req, res, next) => {
 });
 
 app.post("/", (req, res, next) => {
-    res.status(200).send("a5efe228");
+    res.status(200).send("ok");
 });
 
 app.listen(process.env.PORT || 80, () => {
