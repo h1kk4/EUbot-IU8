@@ -5,12 +5,12 @@ const bot = new API(process.env.TOKEN);
 
 const u = {
     
-    date = () => {
+    date: () => {
         let date = new Date();
         return "[ " + date.toUTCString() + " ]";
     },
     
-    log = (...args) => {
+    log: (...args) => {
         console.log(date(), ...args);
     }
 }
