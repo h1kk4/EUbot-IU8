@@ -32,6 +32,10 @@ function handler(req, res) {
     }
 };
 
+app.listen(process.env.PORT);
+
+////////////////////////////////////////////////////////////////////////////////
+
 const u = {
     types: {
         confirmation: (req, res) => {
