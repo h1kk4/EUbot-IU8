@@ -1,23 +1,22 @@
 "use strict";
 
-const app = require("express")();
+const API = require("node-vk-bot-api");
+const bot = new API(process.env.TOKEN);
 
-app.use((req, res, next) => {
-    console.log("[ " + new Date().toUTCString() + " ]",
-        "Received request:\n\t", req.method, req.url);
-    next();
+const u = {
+    
+    date = () => {
+        let date = new Date();
+        return "[ " + date.toUTCString() + " ]";
+    },
+    
+    log = (...args) => {
+        console.log(date(), ...args);
+    }
+}
+
+bot.on(({message, reply}) => {
+    reply(message);
 });
 
-app.get("/", (req, res, next) => {
-    res.status(200).contentType("text/html").send("<!DOCTYPE html>" +
-        "<meta charset=utf8><title>Demo page</title><h1>Hello World!!!</h1>" +
-        "<h4>this is a demo page</h4>");
-});
-
-app.post("/", (req, res, next) => {
-    res.status(200).send("ok");
-});
-
-app.listen(process.env.PORT || 80, () => {
-    console.log("Server listening on port " + (process.env.PORT || 80));
-});
+bot.listen();
