@@ -10,8 +10,8 @@ app.use((req, res, next) => {
 
 app.get("/", (req, res, next) => {
     res.status(200).contentType("text/html").send("<!DOCTYPE html>" +
-        "<meta charset=utf8><title>Demo page</title><h1>Hello World!!!</h1>" +
-        "<h4>this is a demo page</h4>");
+        "<meta charset=utf8><title>The secret project..</title><h1>Goodbye, World!!!</h1>" +
+        "<h4>Coming soon...</h4>");
 });
 
 app.post("/", (req, res, next) => {
