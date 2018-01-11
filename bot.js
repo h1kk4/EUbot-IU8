@@ -72,7 +72,9 @@ const u = {
         return result.join("&");
     },
     use_method: (method, params) => {
-        request(api_host + method + "?" + u.stringify_params(params), {
+        let url = api_host + method + "?" + u.stringify_params(params);
+        console.log(url);
+        request(url, {
             method: "GET"
         });
     }
