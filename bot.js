@@ -3,6 +3,9 @@
 const API = require("node-vk-bot-api");
 const bot = new API(process.env.TOKEN);
 
+const app = require("express")();
+app.listen(process.env.PORT);
+
 const u = {
     
     date: () => {
