@@ -8,10 +8,12 @@ app.use((req, res, next) => {
     next();
 });
 
-app.post("/", (req, res, next) => {
-    res.status(200).send("Hello World!!!");
+app.all("/", (req, res, next) => {
+    res.status(200).contentType("text/html").send("<!DOCTYPE html>" +
+        "<meta charset=utf8><title>Demo page</title><h1>Hello World!!!</h1>" +
+        "<h6>this is a demo page</h6>");
 });
 
-app.listen(process.env.PORT, () => {
-    console.log("Server listening on port " + process.env.PORT);
+app.listen(process.env.PORT || 80, () => {
+    console.log("Server listening on port " + (process.env.PORT || 80));
 });
