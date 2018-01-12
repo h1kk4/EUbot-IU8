@@ -46,7 +46,7 @@ const u = {
                 let user_id = req.body.object.user_id;
                 let message = req.body.object.body;
                 
-                u.use_method("message.send", {
+                u.use_method("messages.send", {
                     user_id: user_id,
                     message: "HELLO_EPTA"
                 });
@@ -73,7 +73,7 @@ const u = {
             return result.join("&");
         },
         use_method: (method, params) => {
-            let url = api_host + method + "?" + encoder(u.stringify_params(params));
+            let url = api_host + method + "?" + u.stringify_params(params);
             console.log(url);
             request.get(url, function (error, response, body) {
                     console.log('error:', error); // Print the error if one occurred
