@@ -18,7 +18,7 @@ app.use(parser.json());
 // })
 
 app.post("/", handler);
-app.get("/", (req, res, next) => {
+// app.get("/", (req, res, next) => {
 //     res.status(200).contentType("text/html").send("<!DOCTYPE html>" +
 //         "<meta charset=utf8><title>The secret project..</title><h1>Goodbye, World!!!</h1>" +
 //         "<h2>Coming soon...</h2><h4>Congratulations! Server is running!</h4>");
