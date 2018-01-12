@@ -49,15 +49,17 @@ const u = {
             let message = req.body.object.body;
             switch (message)
             {
-              case "Бот пидр":
-                message = "Нет ты";
-                break;
+                case "Бот пидр":
+                  message = "Нет ты";
+                    break;
                 case "расписон":
+                    message = "Coming soon...";
+                    break;
                 case "hfcgbcfybt":
                 case "hfcgbcjy":
                     message = "Coming soon...";
                     break;
-              
+
             }
 
             u.use_method("messages.send", {
