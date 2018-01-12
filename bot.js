@@ -49,8 +49,7 @@ const u = {
             let message = req.body.object.body;
             if (message === "")
             {
-                let FWDArray = req.body.object.fwd_message;
-                message = FWDArray.body;
+                message = req.body.object.fwd_message.body;
             }
             switch (message)
             {
