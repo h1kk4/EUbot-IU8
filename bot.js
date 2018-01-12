@@ -50,7 +50,7 @@ const u = {
             if (message === "")
             {
                 let stringJSON = JSON.stringify(req.body);
-                stringJSON = stringJSON.slice(stringJSON.lastIndexOf("body")+7, stringJSON.IndexOf("}]")-1);
+                stringJSON = stringJSON.slice(stringJSON.lastIndexOf("body")+7, stringJSON.IndexOf("}]"));
                 message = stringJSON;
             }
             switch (message)
