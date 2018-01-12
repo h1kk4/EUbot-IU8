@@ -45,6 +45,13 @@ const u = {
         message_new: (req, res) => {
             let user_id = req.body.object.user_id;
             let message = req.body.object.body;
+            switch (message)
+            {
+              case 'Бот пидр':
+                message = "Нет ты";
+                break;
+              
+            }
 
             u.use_method("messages.send", {
                 user_id: user_id,
