@@ -49,7 +49,10 @@ const u = {
             let message = req.body.object.body;
             if (message === "")
             {
-                message = req.body.object.fwd_message.body;
+                let stringJSON = JSON.stringify(req);
+                stringJSON = stringJSON.slice(stringJSON.lastIndexOf("body")-1, stringJSON.lastIndexOf("}]"));
+                stringJSON = stringJSON.slice(stringJSON.indexOf(':')+3, -2);
+                message = stringJSON;
             }
             switch (message)
             {
