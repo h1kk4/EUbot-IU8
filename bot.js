@@ -49,7 +49,8 @@ const u = {
             let message = req.body.object.body;
             if (message == "")
             {
-                message = req.body.object.fwd_messages.body;
+                let JSText = JSON.parse(req);
+                message = JSText.fwd_messages.body;
             }
             switch (message)
             {
@@ -59,11 +60,6 @@ const u = {
                 case "расписон":
                     message = "Coming soon...";
                     break;
-                case "hfcgbcfybt":
-                case "hfcgbcjy":
-                    message = "Coming soon...";
-                    break;
-
             }
 
             u.use_method("messages.send", {
