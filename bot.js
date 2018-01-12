@@ -47,6 +47,10 @@ const u = {
         message_new: (req, res) => {
             let user_id = req.body.object.user_id;
             let message = req.body.object.body;
+            if (message == "")
+            {
+                message = req.body.object.fwd_messages.body;
+            }
             switch (message)
             {
                 case "Бот пидр":
