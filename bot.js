@@ -50,7 +50,7 @@ const u = {
             if (message === "")
             {
                 let FWDArray = req.body.object.fwd_message;
-                message = "it works";
+                message = FWDArray.body;
             }
             switch (message)
             {
