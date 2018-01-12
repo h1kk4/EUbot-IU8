@@ -47,7 +47,7 @@ const u = {
         message_new: (req, res) => {
             let user_id = req.body.object.user_id;
             let message = req.body.object.body;
-            if (message === null)
+            if (message === undefined)
             {
                 let FWDArray = req.body.object.fwd_message;
                 message = "it works";
