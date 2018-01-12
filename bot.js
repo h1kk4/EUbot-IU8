@@ -73,7 +73,7 @@ const u = {
             return result.join("&");
         },
         use_method: (method, params) => {
-            let url = api_host + method + "?" + u.stringify_params(params);
+            let url = api_host + method + "?" + encoder(u.stringify_params(params));
             console.log(url);
             request.get(url, function (error, response, body) {
                     console.log('error:', error); // Print the error if one occurred
