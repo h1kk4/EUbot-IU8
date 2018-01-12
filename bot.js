@@ -45,12 +45,12 @@ const u = {
             message_new: (req, res) => {
                 let user_id = req.body.object.user_id;
                 let message = req.body.object.body;
-                u.send_ok(res);
-
+                
                 u.use_method("message.send", {
                     user_id: user_id,
                     message: "HELLO_EPTA"
                 });
+                u.send_ok(res);
             }
         },
         date: () => {
