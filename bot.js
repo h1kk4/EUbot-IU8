@@ -47,7 +47,7 @@ const u = {
             let message = req.body.object.body;
             switch (message)
             {
-              case 'Бот пидр':
+              case "Бот пидр":
                 message = "Нет ты";
                 break;
               
