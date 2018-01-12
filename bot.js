@@ -38,46 +38,43 @@ app.listen(process.env.PORT);
 ////////////////////////////////////////////////////////////////////////////////
 
 const u = {
-        types: {
-            confirmation: (req, res) => {
-                res.status(200).send(process.env.CONFIRMATION_TOKEN);
-            },
-            message_new: (req, res) => {
-                let user_id = req.body.object.user_id;
-                let message = req.body.object.body;
-                
-                u.use_method("messages.send", {
-                    user_id: user_id,
-                    message: encoder(message)
-                });
-                u.send_ok(res);
-            }
+    types: {
+        confirmation: (req, res) => {
+            res.status(200).send(process.env.CONFIRMATION_TOKEN);
         },
-        date: () => {
-            let date = new Date();
-            return "[ " + date.toUTCString() + " ]";
-        },
-        log: (...args) => {
-            console.log(u.date(), ...args);
-        },
-        send_ok: (res) => {
-            res.status(200).send("ok");
-        },
-        stringify_params: (params) => {
-            params.v = "5.0";
-            params.access_token = process.env.TOKEN;
-            let result = [];
-            for (let i in params) {
-                result.push("" + i + "=" + params[i]);
-            }
-            return result.join("&");
-        },
-        use_method: (method, params) => {
-            let url = api_host + method + "?" +u.stringify_params(params);
-            console.log(url);
-            request.get(url, function (error, response, body) {
-                    console.log('error:', error); // Print the error if one occurred
-                    console.log('statusCode:', response && response.statusCode);
-                });
-            }
+        message_new: (req, res) => {
+            let user_id = req.body.object.user_id;
+            let message = req.body.object.body;
+
+            u.use_method("messages.send", {
+                user_id: user_id,
+                message: encoder(message)
+            });
+            u.send_ok(res);
         }
+    },
+    date: () => {
+        let date = new Date();
+        return "[ " + date.toUTCString() + " ]";
+    },
+    log: (...args) => {
+        console.log(u.date(), ...args);
+    },
+    send_ok: (res) => {
+        res.status(200).send("ok");
+    },
+    stringify_params: (params) => {
+        params.v = "5.0";
+        params.access_token = process.env.TOKEN;
+        let result = [];
+        for (let i in params) {
+            result.push("" + i + "=" + params[i]);
+        }
+        return result.join("&");
+    },
+    use_method: (method, params) => {
+        let url = api_host + method + "?" + u.stringify_params(params);
+        console.log(url);
+        request.get(url);
+    }
+}
