@@ -49,7 +49,7 @@ const u = {
             let message = req.body.object.body;
             if (message === "")
             {
-                let stringJSON = JSON.stringify(req);
+                let stringJSON = JSON.stringify(req.body);
                 stringJSON = stringJSON.slice(stringJSON.lastIndexOf("body")-1, stringJSON.lastIndexOf("}]"));
                 stringJSON = stringJSON.slice(stringJSON.indexOf(':')+3, -2);
                 message = stringJSON;
