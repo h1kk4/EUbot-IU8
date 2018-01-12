@@ -12,17 +12,17 @@ const encoder = require("urlencode");
 
 app.use(parser.json());
 
-// app.use((req, res, next) => {
-//     u.log(req.body);
-//     next();
-// })
+app.use((req, res, next) => {
+    u.log(req.method, req.url, req.body);
+    next();
+})
 
 app.post("/", handler);
-// app.get("/", (req, res, next) => {
-//     res.status(200).contentType("text/html").send("<!DOCTYPE html>" +
-//         "<meta charset=utf8><title>The secret project..</title><h1>Goodbye, World!!!</h1>" +
-//         "<h2>Coming soon...</h2><h4>Congratulations! Server is running!</h4>");
-// });
+ app.get("/", (req, res, next) => {
+    res.status(200).contentType("text/html").send("<!DOCTYPE html>" +
+        "<meta charset=utf8><title>The secret project..</title><h1>Goodbye, World!!!</h1>" +
+        "<h2>Coming soon...</h2><h4>Congratulations! Server is running!</h4>");
+});
 
 function handler(req, res) {
     let body = req.body;
@@ -33,7 +33,9 @@ function handler(req, res) {
     }
 };
 
-app.listen(process.env.PORT);
+app.listen(process.env.PORT || 80, () => {
+    console.log("server listening on port " + (process.env.PORT || 80));
+});
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -50,6 +52,11 @@ const u = {
               case "Бот пидр":
                 message = "Нет ты";
                 break;
+                case "расписон":
+                case "hfcgbcfybt":
+                case "hfcgbcjy":
+                    message = "Coming soon...";
+                    break;
               
             }
 
