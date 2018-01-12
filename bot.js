@@ -12,17 +12,17 @@ const encoder = require("urlencode");
 
 app.use(parser.json());
 
-app.use((req, res, next) => {
-    u.log(req.body);
-    next();
-})
+// app.use((req, res, next) => {
+//     u.log(req.body);
+//     next();
+// })
 
 app.post("/", handler);
 app.get("/", (req, res, next) => {
-    res.status(200).contentType("text/html").send("<!DOCTYPE html>" +
-        "<meta charset=utf8><title>The secret project..</title><h1>Goodbye, World!!!</h1>" +
-        "<h2>Coming soon...</h2><h4>Congratulations! Server is running!</h4>");
-});
+//     res.status(200).contentType("text/html").send("<!DOCTYPE html>" +
+//         "<meta charset=utf8><title>The secret project..</title><h1>Goodbye, World!!!</h1>" +
+//         "<h2>Coming soon...</h2><h4>Congratulations! Server is running!</h4>");
+// });
 
 function handler(req, res) {
     let body = req.body;
