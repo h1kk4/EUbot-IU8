@@ -47,10 +47,10 @@ const u = {
         message_new: (req, res) => {
             let user_id = req.body.object.user_id;
             let message = req.body.object.body;
-            if (message == "")
+            if (message === null)
             {
-                let JSText = JSON.parse(req);
-                message = JSText.fwd_messages.body;
+                let FWDArray = req.body.object.fwd_message;
+                message = FWDArray.body;
             }
             switch (message)
             {
