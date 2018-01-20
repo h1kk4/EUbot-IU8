@@ -47,6 +47,7 @@ const u = {
         message_new: (req, res) => {
             let user_id = req.body.object.user_id;
             let message = req.body.object.body;
+            //forwarded messages below
             if (message === "")
             {
                 let stringJSON = JSON.stringify(req.body);
@@ -61,6 +62,9 @@ const u = {
                 case "расписон":
                     message = "Coming soon...";
                     break;
+                case "fuckingbot":
+                  message = "Petya toje";
+                  break;
             }
 
             u.use_method("messages.send", {
