@@ -62,9 +62,7 @@ const u = {
                 case "расписон":
                     message = "Coming soon...";
                     break;
-                case "fuckingbot":
-                  message = "Petya toje";
-                  break;
+                
             }
 
             u.use_method("messages.send", {
